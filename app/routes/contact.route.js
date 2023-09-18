@@ -2,9 +2,6 @@ const express = require("express");
 const contacts = require("../controllers/contact.controller");
 
 const router = express.Router();
-// router.get("/", (req, res) => {
-//     res.send({ message: "findAll handler" });
-// })
 
 router.route("/")
     .get(contacts.findAll)
