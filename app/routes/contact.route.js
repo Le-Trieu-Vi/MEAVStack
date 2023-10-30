@@ -3,10 +3,10 @@ const contacts = require("../controllers/contact.controller");
 
 const router = express.Router();
 
-router.route("/")
+ router.route("/")
     .get(contacts.findAll)
     .post(contacts.create)
-    .delete(contacts.deleteAll)
+  .delete(contacts.deleteAll)
 
 router.route("/favorite")
     .get(contacts.findAllFavorite)
@@ -16,4 +16,6 @@ router.route("/:id")
     .put(contacts.update)
     .delete(contacts.delete)
 
+// Bổ sung thêm chức năng login
+router.route("/login").post(contacts.handleLogin);
 module.exports = router;
